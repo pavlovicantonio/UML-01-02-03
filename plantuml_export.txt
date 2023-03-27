@@ -1,0 +1,27 @@
+@startuml
+' Alt + D for refresh
+
+!theme plain
+
+title "Bunarina app"
+
+rectangle "Web aplikacija" {
+   usecase "Rezervacija stola" as rezervacija
+   usecase "Meni" as meni
+   usecase "Pregled jela i pica" as pregled
+   usecase "Odabir datuma" as datum
+   usecase "Odabir stola" as stol
+   usecase "Pregled rezerviranih \nstolova" as preg
+}
+
+Korisnik --> rezervacija
+Korisnik --> meni
+stol <.. datum : <<extends>>
+rezervacija <.. stol : <<extends>>
+rezervacija <.. preg : <<extends>>
+pregled ..> meni : <<extends>>
+preg <.. datum : <<extends>>
+
+
+
+@enduml
