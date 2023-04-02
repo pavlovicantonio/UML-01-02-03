@@ -1,0 +1,36 @@
+@startuml
+
+!theme plain
+
+class "Cjenik hrane" as ch{
+    +String naziv
+    +Decimal cijena
+    ---
+    pregled_ponude_hrane()
+}
+
+class "Cjenik pića" as cp{
+    +String naziv
+    +Decimal cijena
+    ---
+    pregled_ponude_pića()
+}
+class "Korisnik" as k{
+    +String ime
+    +String prezime
+    +String email
+}
+
+class "Rezervacija" as r{
+    +String broj_stola
+    +Date datum_rezervacije
+    +Time vrijeme_rezervacije
+    ---
+    +rezervacija_stola()
+}
+
+r "1..1" *--> "0..*" k
+ch --> "0..*" k
+cp --> "0..*"k
+
+@enduml
