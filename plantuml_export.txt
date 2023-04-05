@@ -10,18 +10,20 @@ rectangle "Web aplikacija" {
    usecase "Meni" as meni
    usecase "Pregled jela i pica" as pregled
    usecase "Odabir datuma" as datum
-   usecase "Odabir stola" as stol
-   usecase "Pregled rezerviranih \nstolova" as preg
+   usecase "Broj ljudi" as br
+   usecase "Odabir termina (u koliko sati)" as ot
+   usecase "Pregled korisničkog profila" as pkp
+   usecase "Pregled home page" as ab
 }
 
 Korisnik --> rezervacija
 Korisnik --> meni
-stol <.. datum : <<extends>>
-rezervacija <.. stol : <<extends>>
-rezervacija <.. preg : <<extends>>
 pregled ..> meni : <<extends>>
-preg <.. datum : <<extends>>
-
+rezervacija <.. datum : <<include>>
+rezervacija <.. br: <<include
+rezervacija <.. ot: <<icnlude>>
+Korisnik --> pkp
+Korisnik --> ab
 
 
 @enduml
