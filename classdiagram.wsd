@@ -19,8 +19,19 @@ class "Korisnik" as k{
     +String ime
     +String prezime
     +String email
+    +String username 
+    +String password
+    ---
+    pregled_korisnickih_podataka()
+    logout()
 }
 
+class "Home" as h{
+    +String about
+    +String radno_vrijeme
+    ---
+    pregled_home_stranice()
+}
 class "Rezervacija" as r{
     +String broj_stola
     +Date datum_rezervacije
@@ -32,5 +43,6 @@ class "Rezervacija" as r{
 r "1..1" *--> "0..*" k
 ch --> "0..*" k
 cp --> "0..*"k
+h --> "0..*"k
 
 @enduml
