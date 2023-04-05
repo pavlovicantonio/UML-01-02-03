@@ -4,4 +4,4 @@
 
 - classdiagram.wsd (Class diagram)
 
-- Figma loading... :)
+- Linl na prototip aplikacije.pdf (Link na prototip u figmi)
